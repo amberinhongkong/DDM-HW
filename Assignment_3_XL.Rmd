@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA, message = FALSE, eval = TRUE,
 # Promotional event planning
 
 1. Evidence for strong seasonal demand
-There is a strong seasonal demand for this product. Per event summary, the product has a much higher demand around the time of event 2. The base case for event 2 is 1,360, a 87% increase from event 1, a 469% increase from event 3, a 203% increase from event 4, and a 308% increase from event 5. Similarly, the base demand around event 1 is also higher than other events except event 2. The higher base demands around the time of event 2 and event 1 show a strong seasonal demand.
+There is a strong seasonal demand for this product. Per event summary, the product has a much higher demand around the time of event 2. The base case for event 2 is 1,360, a 87% increase from event 1, a 469% increase from event 3, a 203% increase from event 4, and a 308% increase from event 5. Similarly, the base demand around event 1 is also higher than other events except event 2. The higher base demands around the time of event 2 (Dec) and event 1 (Nov) show a strong seasonal demand during holiday periods.
 
 2. Incremental sales response
 ```{r}
@@ -31,10 +31,10 @@ eventsummary$promoRev = eventsummary$promoQ*eventsummary$promoP
 eventsummary$incrRevFrac = (eventsummary$promoRev - eventsummary$baseRev)/eventsummary$baseRev
 print(eventsummary)
 ```
-Per summary Table, the incremental sales response for event 1 is 33.60% and for event 2 is 69.33%.
+Per summary Table, the incremental sales response for event 1 is 33.60% and for event 2 is 69.33%. ?????????????YH: 55% and 69.4%
 
 3. Profitability results
-From ROI per event summary, event 5 is the most profitable with a ROI of 53%. Event 2 is the second, with a ROI of 44%. Event 1 does not have a profitable result with the promotion, with a negative ROI of -2%. Event 3, and 4 are even worse with much more negative ROIs of -22% and -79%.
+From ROI per event summary, event 5 is the most profitable with a ROI of 53%. Event 2 is the second, with a ROI of 44%. Event 1 does not have a profitable result with the promotion, with a negative ROI of -2%. Event 3, and 4 are even worse with much more negative ROIs of -22% and -79%. Event 5 and 2 also have the highest display % among all promotion events. It seems display is more effective than feature.
 
 4. The profitability with forward buying
 ```{r}
@@ -45,10 +45,10 @@ eventsummary2$grossContr = eventsummary2$incrContr - eventsummary2$eventCost
 eventsummary2$ROI = eventsummary2$grossContr/eventsummary2$incrContr
 print(eventsummary2)
 ```
-The profit for event 1 will be -1145 with a ROI of -14.28% and for event 2 will be 4776 with a ROI of 25.30%.
+The profit for event 1 will be -1145 with a ROI of -14.28% and for event 2 will be 4776 with a ROI of 25.30%. ????????? -12.5% and 33.9%
 
 5. The approaches to calculate ROIs
-The Booz Allen Hamilton (BAH) approach and the one took in class are equally good. The BAH method is more applicable when considering each unit sale, while the one took in class is more generally applicable.
+The Booz Allen Hamilton (BAH) approach and the one took in class are equally good. The BAH method is more applicable when considering each unit sale, while the one took in class is more generally applicable. Since the BAH method incorporates price cut on incremental sales in the cost calculation, it is a more "stringent" way to measure event profitability, with a lower ROI compared to the method in class.
 
 ```{r cars}
 summary(cars)
